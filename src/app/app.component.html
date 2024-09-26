@@ -1,8 +1,16 @@
 <p [style.background-color]="kolor" [style.text-align]="jak">
   Nazywam się {{ osoba.imie }} {{ osoba.nazwisko }}
 </p>
-<img [src]="osoba.zdjecie" [class.zdjecie]="aktywna" />
+<label><input type="checkbox" [(ngModel)]="pokazZdjecie" />Pokaż zdjęcie</label>
+<img [src]="osoba.zdjecie" [class.zdjecie]="aktywna" *ngIf="pokazZdjecie" />
 <button (click)="zmienKolor()" type="button" [class.przycisk]="aktywna">
   Zmień kolor tła
 </button>
-<input type="text" [(ngModel)]="osoba.nazwisko" [class.input]="aktywna" />
+<button
+  (click)="pokazZdjecie = !pokazZdjecie"
+  type="button"
+  [class.przycisk]="aktywna"
+>
+  Pokaż zdjęcie
+</button>
+<p>Obecny status właściwości 'pokazZdjecie' = {{ pokazZdjecie }}</p>

@@ -22,3 +22,19 @@
   margin: 0 auto;
   font-size: 20px;
 }
+table {
+  border-collapse: collapse;
+}
+td {
+  border: #000 solid 2px;
+}
+.parzysta {
+  background-color: yellow;
+}
+.nieparzysta {
+  background-color: blue;
+}
+.wyroznienie {
+  background-color: black;
+  color: white;
+}
